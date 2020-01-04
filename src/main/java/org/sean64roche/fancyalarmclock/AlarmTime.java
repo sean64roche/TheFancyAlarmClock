@@ -61,6 +61,7 @@ public class AlarmTime implements Alarm {
         alarmTime.set(Calendar.MINUTE, minute);
     }
 
+    //parses in the wrong format currently.
     public static Date CalendarToDate() throws ParseException {
         long date = new java.text.SimpleDateFormat("MM/dd/yyyy HH:mm:ss").parse("01/01/1970 01:00:00").getTime() / 1000;
         return new Date(date);
