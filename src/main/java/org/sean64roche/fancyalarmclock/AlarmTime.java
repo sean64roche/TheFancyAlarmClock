@@ -1,10 +1,9 @@
 package org.sean64roche.fancyalarmclock;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.text.DateFormat;
+
 public class AlarmTime implements Alarm {
 
     /*
@@ -63,7 +62,7 @@ public class AlarmTime implements Alarm {
 
     //parses in the wrong format currently.
     public static Date CalendarToDate() throws ParseException {
-        long date = new java.text.SimpleDateFormat("yyyy/MM/dd HH:mm:ss").parse("1970/01/01 01:00:00").getTime() / 1000;
-        return new Date(date);
+        long epoch = new java.text.SimpleDateFormat("yyyy/MM/dd HH:mm:ss").parse("1970/01/01 01:00:00").getTime() / 1000;
+        return new Date(epoch);
     }
 }
