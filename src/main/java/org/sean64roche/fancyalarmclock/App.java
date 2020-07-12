@@ -2,11 +2,9 @@ package org.sean64roche.fancyalarmclock;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.text.ParseException;
 import java.util.Date;
 import java.util.Timer;
-import java.util.Calendar;
 import java.util.TimerTask;
 
 /**
@@ -15,13 +13,18 @@ import java.util.TimerTask;
  */
 public class App implements ActionListener {
 
-    public static void main(String[] args) {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+    public static void main(String[] args) throws ParseException {
 
-        AlarmTime TestAlarm = new AlarmTime(2020, 1, 4, 9, 37);
+        AlarmTime testAlarm = new AlarmTime(2020, 1, 4, 9, 37, 0);
 
-        String storedDate = dateFormat.format(new Date());
+        String storedDate = AlarmTime.DATE_FORMAT.format(new Date());
         System.out.println(storedDate);
+
+        // Format the date into yyyy/mm/dd while also converting the
+        // Calendar representation into a Date object.
+
+        AlarmTime.DATE_FORMAT.format(testAlarm.CalendarToDate());
+        System.out.println(testAlarm);
 
         Timer testTimer = new Timer();
         TimerTask taskNew = new TimerTask() {
@@ -36,7 +39,7 @@ public class App implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("Ring Ring, Alarm!");
+        System.out.println("WOT");
     }
 
 }
