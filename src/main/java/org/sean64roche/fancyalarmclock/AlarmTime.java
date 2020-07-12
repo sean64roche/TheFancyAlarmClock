@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class AlarmTime implements Alarm {
+public class AlarmTime implements Alarm  {
 
     /*
      * Date constructors are deprecated and have been replaced by java.util.Calendar
@@ -23,10 +23,10 @@ public class AlarmTime implements Alarm {
         this.setAlarmTime(year, month, date, hrs, min, sec);
     }
 
-    //shouldn't be putting zeros into here. Fix later
-    public AlarmTime(int date, int hrs, int min)    {
-        this.setAlarmTime(0, 0, date, hrs, min, 0);
-    }
+    // TODO Implement as a daily reoccurring alarm. Fix later
+    // public AlarmTime(int hrs, int min, int sec)    {
+    //    this.setAlarmTime(0, 0, 0, hrs, min, sec);
+    // }
 
     public Calendar getAlarmTime()    {
         return alarmTime;
@@ -39,8 +39,7 @@ public class AlarmTime implements Alarm {
     }
 
     /*
-     *   Methods for setting individual parts of the alarm, haven't been tested yet.
-     *   Could be useful later.
+     *   get set
      *
      *
      */
@@ -69,12 +68,10 @@ public class AlarmTime implements Alarm {
         this.alarmTime.set(Calendar.SECOND, second);
     }
 
-    @Override
     public int getYear() {
         return this.alarmTime.get(Calendar.YEAR);
     }
 
-    @Override
     public int getMonth() {
         return this.alarmTime.get(Calendar.MONTH);
     }
@@ -110,7 +107,7 @@ public class AlarmTime implements Alarm {
     /*
      *  Parses the Calendar representation into a Date object.
      *  Utilises CalendarToEpoch as the method conveniently does a lot of the
-     *  dirty work.
+     *  work.
      */
 
     //  TODO Implement ParseException handling
