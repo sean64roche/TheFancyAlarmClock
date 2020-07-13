@@ -9,7 +9,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public interface Alarm {
+public interface Alarm  {
 
     Calendar getAlarmTime();
     void setAlarmTime(int year, int month, int date, int hrs, int min, int sec);

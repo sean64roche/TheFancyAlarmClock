@@ -108,6 +108,8 @@ public class AlarmTimeTest {
         assertEquals(0, testAlarmTime2.getSecond());
     }
 
+    // TODO write below tests first and foremost.
+
     @Test
     void calendarToEpoch() {
     }
