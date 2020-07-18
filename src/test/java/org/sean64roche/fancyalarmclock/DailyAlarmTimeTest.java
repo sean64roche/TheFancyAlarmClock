@@ -77,4 +77,20 @@ class DailyAlarmTimeTest {
         testAlarmTime1.setSecond(0);
         assertEquals(0, testAlarmTime1.getSecond());
     }
+
+    // Testing basic behaviour.
+    @Test
+    void toLocalTimeStringTest() {
+        String expected = "14:13:44";
+        assertEquals(expected, testAlarmTime1.toLocalTimeString());
+    }
+
+    // Testing considering test1 passes, this should also pass with
+    // object manipulation.
+    @Test
+    void toLocalTimeStringTest2()   {
+        String expected = "14:13:44";
+        testAlarmTime1.setAlarmTime(0, 0, 0);
+        assertNotEquals(expected, testAlarmTime1.toLocalTimeString());
+    }
 }

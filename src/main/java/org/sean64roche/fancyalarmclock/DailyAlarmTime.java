@@ -74,6 +74,10 @@ public class DailyAlarmTime extends AlarmTime {
                 '}';
     }
 
+    public  String toLocalTimeString()  {
+        return this.dailyAlarmTime.toString();
+    }
+
     private void initLocalTime()    {
         dailyAlarmTime = LocalTime.of(this.hour, this.minute, this.second);
     }
