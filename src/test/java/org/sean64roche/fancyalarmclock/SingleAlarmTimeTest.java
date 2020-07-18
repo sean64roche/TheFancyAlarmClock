@@ -3,6 +3,8 @@ package org.sean64roche.fancyalarmclock;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalTime;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class SingleAlarmTimeTest {
@@ -77,10 +79,18 @@ public class SingleAlarmTimeTest {
 
     @Test
     void getDailyAlarmTime() {
+        LocalTime expected = LocalTime.of(19, 30, 45);
+        assertEquals(expected, testAlarmTime1.getDailyAlarmTime());
     }
 
     @Test
     void testSetAlarmTime1() {
+        testAlarmTime3 = new SingleAlarmTime
+                (2000, 4, 9, 20, 30, 0);
+        testAlarmTime1.setAlarmTime(
+                2000, 4, 9, 20, 30, 0
+        );
+        assertEquals(testAlarmTime3.toString(), testAlarmTime1.toString());
     }
 
     //TODO test and handle invalid datetime input.
