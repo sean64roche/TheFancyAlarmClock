@@ -2,7 +2,6 @@ package org.sean64roche.fancyalarmclock;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.InvalidPropertiesFormatException;
 
 public class SingleAlarmTime extends AlarmTime   {
 
