@@ -9,7 +9,6 @@ public class SingleAlarmTime extends AlarmTime   {
     private int year, month, date, hour, minute, second;
     private LocalDateTime singleAlarmTime;
 
-    // TODO everything!
     public SingleAlarmTime(int year, int month, int date, int hour, int minute, int second) {
         setAlarmTime(year, month, date, hour, minute, second);
     }
@@ -103,11 +102,23 @@ public class SingleAlarmTime extends AlarmTime   {
         return this.second;
     }
 
-    // toString of current object.
-
+    // toString of current class.
     @Override
     public String toString() {
-        return singleAlarmTime.toString();
+        return "SingleAlarmTime{" +
+                "year=" + year +
+                ", month=" + month +
+                ", date=" + date +
+                ", hour=" + hour +
+                ", minute=" + minute +
+                ", second=" + second +
+                ", singleAlarmTime=" + singleAlarmTime +
+                '}';
+    }
+
+    // n.b. LocalDateTime object - handled differently.
+    public String toLocalDateTimeString()   {
+        return this.singleAlarmTime.toString();
     }
 
     // Handler for setting the local LocalDateTime variable.

@@ -133,17 +133,17 @@ public class SingleAlarmTimeTest {
 
     // Testing basic behaviour.
     @Test
-    void testToString() {
+    void testToLocalDateTimeString() {
         String expected = "2020-11-18T19:30:45";
-        assertEquals(expected, testAlarmTime1.toString());
+        assertEquals(expected, testAlarmTime1.toLocalDateTimeString());
     }
 
     // Testing considering test1 passes, this should also pass with
     // object manipulation.
     @Test
-    void testToString2()    {
+    void testToLocalDateTimeString2()    {
         String expected = "2020-11-18T19:30:45";
         testAlarmTime1.setDate(24);
-        assertNotEquals(expected, testAlarmTime1.toString());
+        assertNotEquals(expected, testAlarmTime1.toLocalDateTimeString());
     }
 }

@@ -30,7 +30,7 @@ public class DailyAlarmTime extends AlarmTime {
         this.hour = hour;
         this.minute = minute;
         this.second = second;
-        dailyAlarmTime = LocalTime.of(hour, minute, second);
+        initLocalTime();
     }
 
     public void setAlarmTime(int year, int month, int date, int hour, int minute, int second) {
@@ -51,18 +51,30 @@ public class DailyAlarmTime extends AlarmTime {
 
     public void setHour(int hour) {
         this.hour = hour;
+        initLocalTime();
     }
 
     public void setMinute(int minute) {
         this.minute = minute;
+        initLocalTime();
     }
 
     public void setSecond(int second) {
         this.second = second;
+        initLocalTime();
     }
 
     @Override
     public String toString() {
-        return this.dailyAlarmTime.toString();
+        return "DailyAlarmTime{" +
+                "hour=" + hour +
+                ", minute=" + minute +
+                ", second=" + second +
+                ", dailyAlarmTime=" + dailyAlarmTime +
+                '}';
+    }
+
+    private void initLocalTime()    {
+        dailyAlarmTime = LocalTime.of(this.hour, this.minute, this.second);
     }
 }

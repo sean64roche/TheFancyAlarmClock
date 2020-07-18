@@ -50,8 +50,6 @@ public abstract class AlarmTime {
 //
 //    public abstract int getDay();
 
-    public abstract String toString();
-
     /*
      *  Raw conversion of the given Calendar into an epoch value.
      *  This should be used over the Date representation when not being displayed.
