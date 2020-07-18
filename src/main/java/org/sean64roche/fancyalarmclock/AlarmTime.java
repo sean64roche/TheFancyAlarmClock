@@ -9,7 +9,7 @@ import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Date;
 
-public abstract class AlarmTime  {
+public abstract class AlarmTime {
 
     /*
      * Date constructors are deprecated and have been replaced
@@ -18,14 +18,19 @@ public abstract class AlarmTime  {
      *
      */
 
+    // Universal String date format - may not be used.
+
     public static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 
     public abstract LocalDateTime getSingleAlarmTime();
 
     public abstract LocalTime getDailyAlarmTime();
 
-    public abstract void setAlarmTime(int hour, int min, int sec);
-    public abstract void setAlarmTime(int year, int month, int date, int hour, int minute, int second);
+    public abstract int getHour();
+
+    public abstract int getMinute();
+
+    public abstract int getSecond();
 
 //    public abstract void setYear(int year);
 //
@@ -44,12 +49,6 @@ public abstract class AlarmTime  {
 //    public abstract int getMonth();
 //
 //    public abstract int getDay();
-
-    public abstract int getHour();
-
-    public abstract int getMinute();
-
-    public abstract int getSecond();
 
     public abstract String toString();
 
@@ -92,12 +91,11 @@ public abstract class AlarmTime  {
     // Appends '0' to beginning of individual values if they are less than
     // 10, as part of a String.
 
-    private String formatValue(int value)   {
-        if (value < 10)    {
+    private String formatValue(int value) {
+        if (value < 10) {
             return "0" + value;
-        } else  {
+        } else {
             return Integer.toString(value);
         }
     }
-
 }

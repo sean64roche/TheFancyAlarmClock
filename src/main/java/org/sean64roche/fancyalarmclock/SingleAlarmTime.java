@@ -2,32 +2,32 @@ package org.sean64roche.fancyalarmclock;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.InvalidPropertiesFormatException;
 
 public class SingleAlarmTime extends AlarmTime   {
 
+    private int year, month, date, hour, minute, second;
+    private LocalDateTime singleAlarmTime;
+
     // TODO everything!
-    public SingleAlarmTime(int year, int month, int date, int hrs, int min, int sec) {
+    public SingleAlarmTime(int year, int month, int date, int hour, int minute, int second) {
 
     }
 
     @Override
     public LocalDateTime getSingleAlarmTime() {
-        return null;
+        return this.singleAlarmTime;
     }
+
+    // Returns current alarm as instance of DailyAlarmTime
 
     @Override
     public LocalTime getDailyAlarmTime() {
-        return null;
+        return LocalTime.of(this.hour, this.minute, this.second);
     }
 
-    @Override
-    public void setAlarmTime(int hour, int min, int sec) {
-
-    }
-
-    @Override
-    public void setAlarmTime(int year, int month, int date, int hour, int min, int sec) {
-
+    public void setAlarmTime(int year, int month, int date, int hour, int minute, int second) {
+        singleAlarmTime = LocalDateTime.of(year, month, date, hour, minute, second);
     }
 
     @Override
@@ -62,7 +62,7 @@ public class SingleAlarmTime extends AlarmTime   {
 
     @Override
     public String toString() {
-        return null;
+        return singleAlarmTime.toString();
     }
 
 }

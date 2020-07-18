@@ -10,6 +10,8 @@ public class DailyAlarmTime extends AlarmTime {
     private int hour, minute, second;
     private LocalTime dailyAlarmTime;
 
+    // Constructor for recurring alarm
+
     public DailyAlarmTime(int hour, int minute, int second) {
         setAlarmTime(hour, minute, second);
     }
@@ -21,7 +23,7 @@ public class DailyAlarmTime extends AlarmTime {
     // TODO uses current date as a placeholder.
     @Override
     public LocalDateTime getSingleAlarmTime() {
-        return dailyAlarmTime.atDate(LocalDate.now());
+        return this.dailyAlarmTime.atDate(LocalDate.now());
     }
 
     public void setAlarmTime(int hour, int minute, int second) {
@@ -31,22 +33,8 @@ public class DailyAlarmTime extends AlarmTime {
         dailyAlarmTime = LocalTime.of(hour, minute, second);
     }
 
-    @Override
     public void setAlarmTime(int year, int month, int date, int hour, int minute, int second) {
         setAlarmTime(hour, minute, second);
-    }
-
-
-    public void setHour(int hour) {
-        this.hour = hour;
-    }
-
-    public void setMinute(int minute) {
-        this.minute = minute;
-    }
-
-    public void setSecond(int second) {
-        this.second = second;
     }
 
     public int getHour() {
@@ -59,6 +47,18 @@ public class DailyAlarmTime extends AlarmTime {
 
     public int getSecond() {
         return this.second;
+    }
+
+    public void setHour(int hour) {
+        this.hour = hour;
+    }
+
+    public void setMinute(int minute) {
+        this.minute = minute;
+    }
+
+    public void setSecond(int second) {
+        this.second = second;
     }
 
     @Override
