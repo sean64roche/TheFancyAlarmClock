@@ -13,18 +13,14 @@ import java.util.TimerTask;
  */
 public class App implements ActionListener {
 
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args)   {
 
-        AlarmTime testAlarm = new AlarmTime(2020, 1, 4, 9, 37, 0);
 
         String storedDate = AlarmTime.DATE_FORMAT.format(new Date());
         System.out.println(storedDate);
 
         // Format the date into yyyy/mm/dd while also converting the
         // Calendar representation into a Date object.
-
-        AlarmTime.DATE_FORMAT.format(testAlarm.CalendarToDate());
-        System.out.println(testAlarm);
 
         Timer testTimer = new Timer();
         TimerTask taskNew = new TimerTask() {

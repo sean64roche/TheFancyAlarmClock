@@ -1,21 +1,19 @@
 package org.sean64roche.fancyalarmclock;
 
-import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import java.util.Calendar;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class AlarmTimeTest {
+public class SingleAlarmTimeTest {
 
     AlarmTime testAlarmTime1, testAlarmTime2, testAlarmTime3;
 
     //  Reset the three test objects.
     @BeforeEach
     public void testInit() {
-        testAlarmTime1 = new AlarmTime(2020, 11, 18, 19, 30, 45);
-        testAlarmTime2 = new AlarmTime(1999, 2, 4, 8, 0, 0);
+        testAlarmTime1 = new SingleAlarmTime(2020, 11, 18, 19, 30, 45);
+        testAlarmTime2 = new SingleAlarmTime(1999, 2, 4, 8, 0, 0);
     }
 
     @Test
@@ -70,24 +68,6 @@ public class AlarmTimeTest {
 
     @org.junit.jupiter.api.Test
     void testSetSecond() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void testGetYear() {
-        assertEquals(2020, testAlarmTime1.getYear());
-        assertEquals(1999, testAlarmTime2.getYear());
-    }
-
-    @org.junit.jupiter.api.Test
-    void testGetMonth() {
-        assertEquals(11, testAlarmTime1.getMonth());
-        assertEquals(2, testAlarmTime2.getMonth());
-    }
-
-    @org.junit.jupiter.api.Test
-    void testGetDay() {
-        assertEquals(18, testAlarmTime1.getDay());
-        assertEquals(4, testAlarmTime2.getDay());
     }
 
     @org.junit.jupiter.api.Test
